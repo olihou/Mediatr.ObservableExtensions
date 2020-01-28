@@ -19,8 +19,11 @@ steps:
   displayName: 'Run a multi-line script'
 - task: DotNetCoreCLI@2
   inputs:
-    command: 'build'
-    projects: 'Mediatr.ObservableExtentions.csproj'
+    command: 'pack'
+    packagesToPack: '**/*.csproj'
+    versioningScheme: 'byBuildNumber'
+    
+
 
 - task: NuGetCommand@2
   inputs:
